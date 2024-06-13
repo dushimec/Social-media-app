@@ -1,10 +1,11 @@
 import express from 'express';
-import { getUserProfile, updateUserProfile } from '../controllers/userController.js';
+import { editUser, getUser} from '../controllers/userController.js';
 import { authenticateUser } from '../middleware/authMiddleware.js';
+
 
 const userRoutes = express.Router();
 
-userRoutes.get('/:userId', authenticateUser, getUserProfile);
-userRoutes.put('/:userId', authenticateUser, updateUserProfile);
+userRoutes.get('/:userId', authenticateUser, getUser);
+userRoutes.put('/:userId', authenticateUser, editUser);
 
 export default userRoutes;

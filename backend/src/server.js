@@ -5,13 +5,13 @@ import app from '../app.js';
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGO_URI = process.env.MONGO_URI;
 
 
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
+  
 })
   .then(() => {
     console.log('Connected to MongoDB');
